@@ -1,0 +1,14 @@
+- name: installing jenkins
+  hosts: all
+  become: true
+  tasks:
+  - name: install userdata file 
+    shell: "{{ lookup ('file' , 'userdata')}}"
+
+  - name: get initial admin pass
+    shell:  cat /var/lib/jenkins/secrets/initialAdminPassword
+    register: jenkins
+
+  - name: write password on the screen
+    debug:
+      msg: "Jenkins initial admin password is : {{jenkins.stdout}}"

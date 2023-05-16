@@ -1,0 +1,6 @@
+[server]
+web ansible_host=34.226.155.197 ansible_user=ec2-user 
+
+
+[all:vars]
+ansible_ssh_private_key_file=C:\Users\Burcu\Desktop\terra-ansi-jenki\b107-key.pem
